@@ -11,7 +11,7 @@ export function Hero() {
       {/* Organic Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.img 
-          src="/assets/organic_shape_wave.png"
+          src={`${import.meta.env.BASE_URL}assets/organic_shape_wave.png`}
           alt=""
           className="absolute bottom-[10%] right-[-5%] w-[35%] opacity-15 mix-blend-multiply"
           animate={{ y: [0, 20, 0] }}

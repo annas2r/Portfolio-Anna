@@ -24,15 +24,15 @@ const projects: Project[] = [
     title: "Alegria Doce Ateliê",
     category: "Identidade Visual",
     year: "2024",
-    image: "/assets/alegria_doce_cover_new.png",
+    image: `${import.meta.env.BASE_URL}assets/alegria_doce_cover_new.png`,
     description: "Uma marca que transborda afeto e doçura em cada detalhe.",
     challenge: "Criar uma identidade que fosse ao mesmo tempo profissional e acolhedora, transmitindo o sabor caseiro com um toque de sofisticação.",
     personalPhrase: "Foi delicioso ver essa marca nascer. Cada cor foi escolhida como um ingrediente de uma receita especial.",
     colors: ["#9fc8a6", "#7b4b33", "#fef3ee", "#628e6b"],
     typography: ["Poly", "ITC New Baskerville"],
     mockups: [
-      "/assets/alegria_doce_1.png",
-      "/assets/alegria_doce_mugs_new.png"
+      `${import.meta.env.BASE_URL}assets/alegria_doce_1.png`,
+      `${import.meta.env.BASE_URL}assets/alegria_doce_mugs_new.png`
     ]
   },
   {
@@ -40,17 +40,17 @@ const projects: Project[] = [
     title: "Recanto do Sereno",
     category: "Logo & Identidade",
     year: "2024",
-    image: "/assets/recanto_logo.jpg",
+    image: `${import.meta.env.BASE_URL}assets/recanto_logo.jpg`,
     description: "Uma identidade visual que convida à paz e ao contato com a natureza.",
     challenge: "Traduzir a tranquilidade e a rusticidade elegante de um refúgio em Minas Gerais para uma marca visual sólida.",
     personalPhrase: "O verde profundo e o laranja terroso contam a história do lugar antes mesmo de você chegar lá.",
     colors: ["#10433a", "#e89137", "#f5f5f5"],
     typography: ["Draculas Personal", "Poppins"],
     mockups: [
-      "/assets/recanto_business_card.jpg",
-      "/assets/recanto_tote.jpg",
-      "/assets/recanto_flyer.jpg",
-      "/assets/recanto_logo_green.png"
+      `${import.meta.env.BASE_URL}assets/recanto_business_card.jpg`,
+      `${import.meta.env.BASE_URL}assets/recanto_tote.jpg`,
+      `${import.meta.env.BASE_URL}assets/recanto_flyer.jpg`,
+      `${import.meta.env.BASE_URL}assets/recanto_logo_green.png`
     ]
   },
   {
@@ -58,17 +58,17 @@ const projects: Project[] = [
     title: "Social Media Supermercado",
     category: "Social Media",
     year: "2024",
-    image: "/assets/supermercado_pao.png",
+    image: `${import.meta.env.BASE_URL}assets/supermercado_pao.png`,
     description: "Estratégia visual para varejo que converte seguidores em vendas.",
     challenge: "Criar peças de alta conversão para WhatsApp e Instagram, mantendo a identidade da marca e despertando apetite visual.",
     personalPhrase: "No varejo, o design precisa ser rápido e direto. Cada post é um convite irresistível.",
     colors: ["#0057B7", "#FF8C00", "#F5F5F5"],
     typography: ["Montserrat", "Poppins"],
     mockups: [
-      "/assets/supermercado_zap.png",
-      "/assets/supermercado_pao.png",
-      "/assets/supermercado_macarrao.png",
-      "/assets/supermercado_entrega.png"
+      `${import.meta.env.BASE_URL}assets/supermercado_zap.png`,
+      `${import.meta.env.BASE_URL}assets/supermercado_pao.png`,
+      `${import.meta.env.BASE_URL}assets/supermercado_macarrao.png`,
+      `${import.meta.env.BASE_URL}assets/supermercado_entrega.png`
     ]
   }
 ];

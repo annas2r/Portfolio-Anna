@@ -59,7 +59,7 @@ export function Contact() {
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.img 
-            src="/assets/organic_shape_wave.png"
+            src={`${import.meta.env.BASE_URL}assets/organic_shape_wave.png`}
             alt=""
             className="absolute bottom-0 left-[-10%] w-[50%] opacity-20 rotate-12"
             animate={{ rotate: [12, 10, 15, 12], y: [0, 20, 0] }}

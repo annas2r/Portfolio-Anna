@@ -35,7 +35,7 @@ export function Header() {
             className="block z-50 relative"
           >
             <img 
-              src="/assets/logo.png" 
+              src={`${import.meta.env.BASE_URL}assets/logo.png`}
               alt="Anna Designer Gráfico" 
               className="h-16 md:h-28 w-auto object-contain"
             />

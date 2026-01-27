@@ -33,7 +33,7 @@ export function CreativeProcess() {
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
           <motion.img 
-             src="/assets/organic_shape_wave.png"
+             src={`${import.meta.env.BASE_URL}assets/organic_shape_wave.png`}
              alt=""
              className="absolute top-0 right-[-10%] w-[40%] opacity-20 -rotate-12 mix-blend-multiply"
              animate={{ rotate: [-12, -10, -14, -12] }}
@@ -73,7 +73,7 @@ export function CreativeProcess() {
                 {/* Number Circle */}
                 <div className="relative w-24 h-24 mb-6 flex items-center justify-center">
                   <motion.img 
-                    src="/assets/organic_shape_circle.png" 
+                    src={`${import.meta.env.BASE_URL}assets/organic_shape_circle.png`} 
                     alt=""
                     className="absolute inset-0 w-full h-full object-contain opacity-20 group-hover:opacity-40 transition-opacity duration-500 mix-blend-multiply"
                     animate={{ rotate: [0, 90, 180, 270, 360] }}

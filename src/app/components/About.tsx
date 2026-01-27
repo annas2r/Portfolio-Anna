@@ -42,7 +42,7 @@ export function About() {
                
                <div className="relative rounded-[2rem] overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-700">
                  <ImageWithFallback
-                   src="/assets/profile_anna.jpg"
+                   src={`${import.meta.env.BASE_URL}assets/profile_anna.jpg`}
                    alt="Anna - Designer Gráfica"
                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-1000 ease-out"
                  />
