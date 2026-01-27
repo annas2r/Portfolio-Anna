@@ -13,9 +13,13 @@ export interface Project {
   description: string;
   challenge: string;
   personalPhrase: string;
+  process: { step: string; description: string }[];
   colors: string[];
   typography: string[];
   mockups: string[];
+  layoutType?: 'grid' | 'carousel';
+  deliverables?: string[];
+  virtualSlideCount?: number;
 }
 
 const projects: Project[] = [
@@ -25,17 +29,35 @@ const projects: Project[] = [
     category: "Identidade Visual",
     year: "2024",
     image: `${import.meta.env.BASE_URL}assets/alegria_doce_cover_new.png`,
-    description: "Uma marca que transborda afeto e doçura em cada detalhe.",
+    description: "Uma jornada para traduzir o sabor de memórias afetivas em uma marca visual. O objetivo não era apenas vender doces, mas vender o sentimento de um abraço apertado e de uma tarde de domingo.",
     challenge:
-      "Criar uma identidade que fosse ao mesmo tempo profissional e acolhedora, transmitindo o sabor caseiro com um toque de sofisticação.",
+      "O maior desafio foi equilibrar a doçura (que poderia ficar infantil) com o profissionalismo de um ateliê gourmet. A marca precisava ser fofa, mas confiável; caseira, mas premium.",
     personalPhrase:
-      "Foi delicioso ver essa marca nascer. Cada cor foi escolhida como um ingrediente de uma receita especial.",
+      "Foi delicioso ver essa marca nascer. Cada cor foi escolhida como se eu estivesse selecionando os melhores ingredientes para uma receita especial.",
+    process: [
+      {
+        step: "Imersão no Aroma",
+        description: "Começamos investigando os valores da confeiteira: amor, paciência e ingredientes naturais. Entendi que a marca não vende açúcar, vende afeto."
+      },
+      {
+        step: "Cores e Texturas",
+        description: "A paleta nasceu da mistura de menta suave com tons de chocolate e creme. Buscamos cores que despertem o paladar sem serem agressivas."
+      },
+      {
+        step: "Tipografia Manual",
+        description: "Escolhi fontes que remetem à escrita manual e livros de receitas antigos, trazendo aquela sensação de 'feito pela vovó' mas com acabamento moderno."
+      }
+    ],
+    deliverables: ["Logo Principal & Variações", "Paleta de Cores", "Tipografia Exclusiva", "Pattern & Elementos", "Design de Embalagens"],
     colors: ["#9fc8a6", "#7b4b33", "#fef3ee", "#628e6b"],
     typography: ["Poly", "ITC New Baskerville"],
     mockups: [
       `${import.meta.env.BASE_URL}assets/alegria_doce_1.png`,
       `${import.meta.env.BASE_URL}assets/alegria_doce_mugs_new.png`,
+      `${import.meta.env.BASE_URL}assets/alegria_doce_2.png`,
+      `${import.meta.env.BASE_URL}assets/alegria_doce_main.png`
     ],
+    layoutType: 'grid'
   },
   {
     id: 2,
@@ -44,11 +66,26 @@ const projects: Project[] = [
     year: "2024",
     image: `${import.meta.env.BASE_URL}assets/recanto_logo.jpg`,
     description:
-      "Uma identidade visual que convida à paz e ao contato com a natureza.",
+      "Mais que uma pousada, um convite ao silêncio. A identidade visual foi construída para desacelerar quem a vê, usando o minimalismo como ferramenta de paz.",
     challenge:
-      "Traduzir a tranquilidade e a rusticidade elegante de um refúgio em Minas Gerais para uma marca visual sólida.",
+      "Fugir dos clichês de pousadas rurais (como casinhas literais) e capturar a essência abstrata da neblina da manhã e do cheiro de terra molhada de Minas Gerais.",
     personalPhrase:
-      "O verde profundo e o laranja terroso contam a história do lugar antes mesmo de você chegar lá.",
+      "O verde profundo e o laranja terroso contam a história do lugar antes mesmo de você chegar lá. É uma marca que respira.",
+    process: [
+      {
+        step: "Estudo do Terroir",
+        description: "Analisei a geografia do local. As curvas da logo nasceram inspiradas na silhueta exata das montanhas que cercam a propriedade."
+      },
+      {
+        step: "Minimalismo Rústico",
+        description: "Eliminei excessos. Mantivemos apenas traços essenciais, usando texturas que lembram papel reciclado e madeira crua."
+      },
+      {
+        step: "Refinamento Elegante",
+        description: "Ajustamos o peso das linhas para que a marca funcione tanto em uma placa de madeira rústica quanto em um site de reservas sofisticado."
+      }
+    ],
+    deliverables: ["Logotipo Responsivo", "Direção de Arte", "Cartões de Visita", "Papelaria Institucional", "Assinatura de E-mail"],
     colors: ["#10433a", "#e89137", "#f5f5f5"],
     typography: ["Draculas Personal", "Poppins"],
     mockups: [
@@ -57,6 +94,7 @@ const projects: Project[] = [
       `${import.meta.env.BASE_URL}assets/recanto_flyer.jpg`,
       `${import.meta.env.BASE_URL}assets/recanto_logo_green.png`,
     ],
+    layoutType: 'grid'
   },
   {
     id: 3,
@@ -65,11 +103,26 @@ const projects: Project[] = [
     year: "2024",
     image: `${import.meta.env.BASE_URL}assets/supermercado_pao.png`,
     description:
-      "Estratégia visual para varejo que converte seguidores em vendas.",
+      "Transformando ofertas diárias em desejo de consumo. Aqui, design é estratégia pura: clareza, rapidez de leitura e apetite visual transformados em pixels.",
     challenge:
-      "Criar peças de alta conversão para WhatsApp e Instagram, mantendo a identidade da marca e despertando apetite visual.",
+      "O varejo exige velocidade e volume. O desafio foi criar um sistema visual (templates) que mantivesse a qualidade estética sem perder a agilidade necessária para postar ofertas relâmpago.",
     personalPhrase:
-      "No varejo, o design precisa ser rápido e direto. Cada post é um convite irresistível.",
+      "No varejo, o design não pode atrapalhar a venda; ele é o vendedor silencioso. Cada post é um convite irresistível para entrar na loja.",
+    process: [
+      {
+        step: "Psicologia das Cores",
+        description: "Utilizamos azul para confiança e laranja para fome/urgência. O contraste foi calibrado para destacar preços sem cansar a vista."
+      },
+      {
+        step: "Hierarquia da Informação",
+        description: "Definimos regras claras: Produto é rei, Preço é rainha. Logo e detalhes vêm depois. O olho do cliente escaneia a imagem em segundos."
+      },
+      {
+        step: "Sistematização",
+        description: "Criei templates modulares no Canva e Photoshop para que a equipe interna pudesse replicar a identidade com rapidez e autonomia."
+      }
+    ],
+    deliverables: ["Estratégia de Conteúdo", "Templates Editáveis", "Pack de Ícones", "Destaques para Instagram", "Guia de Estilo para Feed"],
     colors: ["#0057B7", "#FF8C00", "#F5F5F5"],
     typography: ["Montserrat", "Poppins"],
     mockups: [
@@ -78,6 +131,41 @@ const projects: Project[] = [
       `${import.meta.env.BASE_URL}assets/supermercado_macarrao.png`,
       `${import.meta.env.BASE_URL}assets/supermercado_entrega.png`,
     ],
+    layoutType: 'carousel'
+  },
+  {
+    id: 4,
+    title: "Studio Thaise Andrade - Carrossel",
+    category: "Social Media",
+    year: "2024",
+    image: `${import.meta.env.BASE_URL}assets/thaise_slide_1.jpg`,
+    description: "Uma apresentação que une autoridade e elegância. O objetivo foi criar um carrossel infinito que guia a cliente pela história da profissional, transmitindo confiança e sofisticação.",
+    challenge: "Traduzir a expertise técnica em cílios e sobrancelhas para uma linguagem visual que fosse ao mesmo tempo técnica e extremamente feminina, sem cair no clichê.",
+    personalPhrase: "Ver você se sentir poderosa no espelho é minha maior recompensa. Acredito que entregar autoconfiança é meu propósito.",
+    process: [
+      {
+        step: "Narrativa Visual",
+        description: "Estruturamos o conteúdo como uma conversa: do 'Prazer, Thaise' até o convite final. Cada slide puxa o olho para o próximo."
+      },
+      {
+        step: "Fluidez Estética",
+        description: "Utilizamos elementos de conexão (fundo contínuo e formas orgânicas) para criar o efeito de 'carrossel infinito', mantendo o usuário engajado do início ao fim."
+      },
+      {
+        step: "Paleta Premium",
+        description: "Tons de nude, marrom café e branco criam uma atmosfera de luxo acessível e acolhimento, fugindo do rosa padrão."
+      }
+    ],
+    deliverables: ["Estratégia de Narrativa", "Copywriting Persuasivo", "Design de Carrossel Infinito", "Edição de Imagem High-End"],
+    colors: ["#3E2723", "#D7CCC8", "#FFFFFF"],
+    typography: ["Cinzel Decor", "Signature"],
+    mockups: [
+      `${import.meta.env.BASE_URL}assets/thaise_slide_1.jpg`,
+      `${import.meta.env.BASE_URL}assets/thaise_slide_2.png`,
+      `${import.meta.env.BASE_URL}assets/thaise_slide_3.png`,
+      `${import.meta.env.BASE_URL}assets/thaise_slide_4.png`
+    ],
+    layoutType: 'carousel'
   },
 ];
 
@@ -92,27 +180,27 @@ export function ProjectsSection() {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mb-16 text-center"
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#795558]/5 mb-6">
-            <FolderOpen className="w-4 h-4 text-[#795558]" />
-            <span className="text-sm uppercase tracking-widest text-[#795558] font-medium">
-              Portfolio Selecionado
-            </span>
-          </div>
-
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#795558] leading-tight mb-6">
-            Trabalhos Recentes
-          </h2>
-          <p className="text-lg text-gray-600 font-light max-w-2xl mx-auto">
-            Uma curadoria de projetos onde design, estratégia e afeto se
-            encontram.
-          </p>
-        </motion.div>
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mb-16 text-center"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#795558]/5 mb-6">
+              <FolderOpen className="w-4 h-4 text-[#795558]" />
+              <span className="text-sm uppercase tracking-widest text-[#795558] font-medium">
+                Portfolio Selecionado
+              </span>
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-[#795558] leading-tight mb-6">
+              Histórias que ajudei a criar
+            </h2>
+            <p className="text-lg text-gray-600 font-light max-w-2xl mx-auto">
+              Cada projeto é uma jornada única. Aqui, compartilho não apenas o resultado, 
+              mas o sentimento e o aprendizado de cada caminho percorrido.
+            </p>
+          </motion.div>
 
         {/* Behance-style Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
@@ -127,11 +215,11 @@ export function ProjectsSection() {
               onClick={() => setSelectedProject(project)}
             >
               {/* Image Container */}
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 bg-white">
+              <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 bg-white">
                 <ImageWithFallback
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${project.virtualSlideCount ? 'object-left' : 'object-center'}`}
                 />
 
                 {/* Overlay on Hover */}
