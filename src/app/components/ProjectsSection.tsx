@@ -133,40 +133,7 @@ const projects: Project[] = [
     ],
     layoutType: 'carousel'
   },
-  {
-    id: 4,
-    title: "Studio Thaise Andrade - Carrossel",
-    category: "Social Media",
-    year: "2024",
-    image: `${import.meta.env.BASE_URL}assets/thaise_slide_1.jpg`,
-    description: "Uma apresentação que une autoridade e elegância. O objetivo foi criar um carrossel infinito que guia a cliente pela história da profissional, transmitindo confiança e sofisticação.",
-    challenge: "Traduzir a expertise técnica em cílios e sobrancelhas para uma linguagem visual que fosse ao mesmo tempo técnica e extremamente feminina, sem cair no clichê.",
-    personalPhrase: "Ver você se sentir poderosa no espelho é minha maior recompensa. Acredito que entregar autoconfiança é meu propósito.",
-    process: [
-      {
-        step: "Narrativa Visual",
-        description: "Estruturamos o conteúdo como uma conversa: do 'Prazer, Thaise' até o convite final. Cada slide puxa o olho para o próximo."
-      },
-      {
-        step: "Fluidez Estética",
-        description: "Utilizamos elementos de conexão (fundo contínuo e formas orgânicas) para criar o efeito de 'carrossel infinito', mantendo o usuário engajado do início ao fim."
-      },
-      {
-        step: "Paleta Premium",
-        description: "Tons de nude, marrom café e branco criam uma atmosfera de luxo acessível e acolhimento, fugindo do rosa padrão."
-      }
-    ],
-    deliverables: ["Estratégia de Narrativa", "Copywriting Persuasivo", "Design de Carrossel Infinito", "Edição de Imagem High-End"],
-    colors: ["#3E2723", "#D7CCC8", "#FFFFFF"],
-    typography: ["Cinzel Decor", "Signature"],
-    mockups: [
-      `${import.meta.env.BASE_URL}assets/thaise_slide_1.jpg`,
-      `${import.meta.env.BASE_URL}assets/thaise_slide_2.png`,
-      `${import.meta.env.BASE_URL}assets/thaise_slide_3.png`,
-      `${import.meta.env.BASE_URL}assets/thaise_slide_4.png`
-    ],
-    layoutType: 'carousel'
-  },
+
 ];
 
 export function ProjectsSection() {
