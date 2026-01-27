@@ -1,7 +1,8 @@
 {
-  "name": "@figma/my-make-file",
+  "name": "portfolio-anna",
   "private": true,
   "version": "0.0.1",
+  "homepage": "https://annas2r.github.io/Portfolio-Anna",
   "type": "module",
   "scripts": {
     "build": "vite build",
