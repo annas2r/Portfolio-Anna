@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Calendar, ArrowRight, CheckCircle, Quote } from 'lucide-react';
+import { X, Calendar, ArrowRight, CheckCircle, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Project } from './ProjectsSection';
 
@@ -11,6 +11,21 @@ interface ProjectModalProps {
 
 export function ProjectModal({ project, onClose }: ProjectModalProps) {
   const [fullscreenImage, setFullscreenImage] = useState<{src: string, style?: React.CSSProperties} | null>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const scrollCarousel = (direction: 'left' | 'right') => {
+    if (carouselRef.current) {
+      const scrollAmount = 300;
+      const newScrollLeft = direction === 'left' 
+        ? carouselRef.current.scrollLeft - scrollAmount 
+        : carouselRef.current.scrollLeft + scrollAmount;
+        
+      carouselRef.current.scrollTo({
+        left: newScrollLeft,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   if (!project) return null;
 
@@ -56,8 +71,30 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
               
               {/* Conditional Layout: Grid or Carousel */}
               {project.layoutType === 'carousel' ? (
-                <div className="space-y-3">
-                  <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-2 -mx-2 px-2 custom-scrollbar">
+                <div className="space-y-3 relative group/carousel">
+                   {/* Navigation Buttons */}
+                   <button 
+                     onClick={(e) => { e.stopPropagation(); scrollCarousel('left'); }}
+                     className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-[#795558] p-2 rounded-full shadow-lg backdrop-blur-sm opacity-0 group-hover/carousel:opacity-100 transition-all duration-300 hover:scale-110"
+                     aria-label="Anterior"
+                     title="Anterior"
+                   >
+                     <ChevronLeft className="w-5 h-5" />
+                   </button>
+
+                   <button 
+                     onClick={(e) => { e.stopPropagation(); scrollCarousel('right'); }}
+                     className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-[#795558] p-2 rounded-full shadow-lg backdrop-blur-sm opacity-0 group-hover/carousel:opacity-100 transition-all duration-300 hover:scale-110"
+                     aria-label="Próximo"
+                     title="Próximo"
+                   >
+                     <ChevronRight className="w-5 h-5" />
+                   </button>
+
+                  <div 
+                    ref={carouselRef}
+                    className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-2 -mx-2 px-2 custom-scrollbar scroll-smooth"
+                  >
                     {project.virtualSlideCount ? (
                        /* Virtual Slides Logic (Panorama Split) */
                        Array.from({ length: project.virtualSlideCount }).map((_, index) => (
