@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Instagram, Linkedin, Mail, Send, CheckCircle } from 'lucide-react';
+import { Instagram, Linkedin, Mail, Send, CheckCircle, ArrowRight, FileText } from 'lucide-react';
 import { toast } from 'sonner';
+import { BriefingModal } from './BriefingModal';
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -10,6 +11,7 @@ export function Contact() {
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
+  const [showBriefing, setShowBriefing] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -162,7 +164,7 @@ export function Contact() {
             </form>
           </motion.div>
 
-          {/* Social Links & Info */}
+          {/* Social Links & Info & Briefing */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -170,6 +172,25 @@ export function Contact() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="space-y-10"
           >
+            {/* Briefing CTA Card */}
+            <div 
+              onClick={() => setShowBriefing(true)}
+              className="bg-[#795558] rounded-[2rem] p-8 md:p-10 text-white relative overflow-hidden group cursor-pointer shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+            >
+              <div className="absolute -top-10 -right-10 opacity-10 rotate-12 transition-transform duration-700 group-hover:rotate-0 group-hover:scale-110">
+                 <FileText className="w-48 h-48" />
+              </div>
+              
+              <h3 className="text-2xl font-serif mb-4 relative z-10">Já tem os detalhes?</h3>
+              <p className="text-white/80 mb-8 relative z-10 font-light leading-relaxed">
+                Se você já sabe exatamente o que precisa, ganhe tempo preenchendo nosso formulário de briefing detalhado.
+              </p>
+              
+              <div className="bg-white text-[#795558] px-6 py-3 rounded-xl font-medium inline-flex items-center gap-3 transition-all duration-300 shadow-sm group-hover:shadow-md">
+                Responder Briefing <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+
             <div className="bg-[#FCF6EF]/50 rounded-[2rem] p-10">
               <h3 className="text-2xl font-serif text-[#795558] mb-8">
                 Outros lugares
@@ -215,6 +236,8 @@ export function Contact() {
                 <span>Respondo assim que possível</span>
               </div>
             </div>
+            
+            <BriefingModal isOpen={showBriefing} onClose={() => setShowBriefing(false)} />
           </motion.div>
         </div>
       </div>
