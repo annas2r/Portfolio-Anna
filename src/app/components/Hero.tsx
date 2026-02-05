@@ -34,7 +34,7 @@ export function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
           >
-            Design com intenção,<br /> estética com significado. ✨
+            Design com intenção,<br /> estética com significado.
           </motion.h1>
 
           <motion.p
